@@ -8,9 +8,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # 第一步，获取源码，使用的是actions
+    # 第一步，获取源码，使用的是actions/checkout
     - name: Checkout
-      uses: densonwei.github.io/checkout@main
+      uses: actions/checkout@main
       with:
         persist-credentials: false
     # 第二步，安装依赖和构建
