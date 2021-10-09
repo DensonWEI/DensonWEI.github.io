@@ -1,8 +1,9 @@
 name: GitHub Actions 构造和部署
+# 当 push 到 main 分支执行
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
