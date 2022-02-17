@@ -1,7 +1,7 @@
 ---
 title: Mac下常用的快捷键
 date: 2022-02-17 17:20:00
-tags: Mac
+tags: Hexo
 categories: 教程
 ---
 
