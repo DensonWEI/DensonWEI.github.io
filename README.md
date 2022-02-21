@@ -33,3 +33,4 @@
 * 把代码 clone 到本地，修改`_config.yml`文件
 
 * 提交代码就可以访问了`[自己Github名].github.io`
+* 
