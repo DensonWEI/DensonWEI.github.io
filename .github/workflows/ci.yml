@@ -10,7 +10,7 @@ jobs:
     steps:
     # 第零步，设置node版本
     - name: Setup Node.js environment
-      uses: actions/setup-node@v10.5.1
+      uses: actions/setup-node@v2.5.1
       with:
         node-version: 10.15.1
     # 第一步，获取源码，使用的是actions/checkout
