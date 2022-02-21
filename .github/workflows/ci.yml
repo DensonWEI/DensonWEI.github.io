@@ -13,15 +13,11 @@ jobs:
     - uses: actions/checkout@main
       with:
         persist-credentials: false
-    - uses: actions/setup-node@v1
-      with:
-          node-version: 10
-          registry-url: https://registry.npmjs.org/
       
     # 第二步，安装依赖和构建
     - name: Install and Build
       run: |
-        npm cache clear --force
+        npm cache clear
         npm install
         npm run-script build
     # 第四步，部署 需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本
