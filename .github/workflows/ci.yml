@@ -8,9 +8,14 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+    # 第零步，设置node版本
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v10.5.1
+      with:
+        node-version: 10.15.1
     # 第一步，获取源码，使用的是actions/checkout
     - name: Checkout
-    - uses: actions/checkout@main
+      uses: actions/checkout@main
       with:
         persist-credentials: false
     # 第二步，安装依赖和构建
