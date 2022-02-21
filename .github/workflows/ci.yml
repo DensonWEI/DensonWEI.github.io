@@ -11,6 +11,8 @@ jobs:
     # 第一步，获取源码，使用的是actions/checkout
     - name: Checkout
     - uses: actions/checkout@main
+      with:
+        persist-credentials: false
     - uses: actions/setup-node@v1
       with:
           node-version: 10
