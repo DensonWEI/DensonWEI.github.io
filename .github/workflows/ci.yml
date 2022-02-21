@@ -8,25 +8,25 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # 第零步，设置node版本
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.5.1
-      with:
-        node-version: 12.x
-    # 第一步，获取源码，使用的是actions/checkout
-    - name: Checkout
-      uses: actions/checkout@main
-      with:
-        persist-credentials: false
-    # 第二步，安装依赖和构建
-    - name: Install and Build
-      run: |
-        npm install
-        npm run-script build
-    # 第四步，部署 需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: public
+      # 第0步，设置node版本
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 12.x
+      # 第1步，获取源码
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          persist-credentials: false
+      # 第2步，安装依赖和编译
+      - name: Install and Build
+        run: |
+          npm install
+          npm run-script build
+      # 第3步，部署 需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: public
